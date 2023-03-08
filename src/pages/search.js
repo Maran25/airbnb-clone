@@ -4,12 +4,11 @@ import Header from "@/components/Header";
 import InfoCard from "@/components/InfoCard";
 import Maps from "@/components/Maps";
 import { format } from "date-fns";
-import { useRouter } from "next/router";
+import Router from "next/router";
 import React from "react";
 
 function search() {
-  const router = useRouter();
-  const { location, startDate, endDate, noOfUsers } = router.query;
+  const { location, startDate, endDate, noOfUsers } = Router.query;
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
   const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
